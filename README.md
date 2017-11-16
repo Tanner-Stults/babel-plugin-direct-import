@@ -74,13 +74,15 @@ import BalanceIcon from "material-ui/svg-icons/action/account-balance";
   "plugins": [
     [
       "direct-import",
-      [
-        "my-package-name",
-        {
-          "name": "my-package-name/sub-package",
-          "indexFile": "my-package-name/sub-package/index.es.js"
-        }
-      ]
+      {
+        "modules": [
+          "my-package-name",
+          {
+            "name": "my-package-name/sub-package",
+            "indexFile": "my-package-name/sub-package/index.es.js"
+          }
+        ]
+      }
     ]
   ]
 }
@@ -93,13 +95,15 @@ require("babel-core").transform("code", {
   plugins: [
     [
       "direct-import",
-      [
-        "my-package-name",
-        {
-          name: "my-package-name/sub-package",
-          indexFile: "my-package-name/sub-package/index.es.js",
-        },
-      ],
+      {
+        modules: [
+          "my-package-name",
+          {
+            name: "my-package-name/sub-package",
+            indexFile: "my-package-name/sub-package/index.es.js",
+          },
+        ],
+      },
     ],
   ],
 });
@@ -144,13 +148,15 @@ export const noop = () => {};
   "plugins": [
     [
       "direct-import",
-      [
-        "material-ui",
-        {
-          "name": "material-ui/svg-icons",
-          "indexFile": "material-ui/svg-icons/index.es"
-        }
-      ]
+      {
+        "modules": [
+          "material-ui",
+          {
+            "name": "material-ui/svg-icons",
+            "indexFile": "material-ui/svg-icons/index.es"
+          }
+        ]
+      }
     ]
   ]
 }
@@ -160,7 +166,7 @@ export const noop = () => {};
 
 ```json
 {
-  "plugins": [["direct-import", ["material-ui"]]]
+  "plugins": [["direct-import", { "modules": ["material-ui"] }]]
 }
 ```
 
@@ -168,7 +174,7 @@ export const noop = () => {};
 
 ```json
 {
-  "plugins": [["direct-import", ["react-virtualized"]]]
+  "plugins": [["direct-import", { "modules": ["react-virtualized"] }]]
 }
 ```
 
@@ -176,7 +182,7 @@ export const noop = () => {};
 
 ```json
 {
-  "plugins": [["direct-import", ["react-router"]]]
+  "plugins": [["direct-import", { "modules": ["react-router"] }]]
 }
 ```
 
@@ -184,7 +190,9 @@ export const noop = () => {};
 
 ```json
 {
-  "plugins": [["direct-import", ["react-router", "react-router-dom"]]]
+  "plugins": [
+    ["direct-import", { "modules": ["react-router", "react-router-dom"] }]
+  ]
 }
 ```
 
@@ -195,13 +203,15 @@ export const noop = () => {};
   "plugins": [
     [
       "direct-import",
-      [
-        "redux-form",
-        {
-          "name": "redux-form/immutable",
-          "indexFile": "redux-form/es/immutable"
-        }
-      ]
+      {
+        "modules": [
+          "redux-form",
+          {
+            "name": "redux-form/immutable",
+            "indexFile": "redux-form/es/immutable"
+          }
+        ]
+      }
     ]
   ]
 }

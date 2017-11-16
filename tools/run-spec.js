@@ -88,7 +88,7 @@ function runTransformSpec(dir) {
 
           const content = fs.readFileSync(filename, "utf-8");
           const result = babel.transformFileSync(filename, {
-            plugins: [[plugin, transformConfig]],
+            plugins: [[plugin, { modules: transformConfig }]],
           });
 
           expect(result.code.trim()).toBe(content.trim());
@@ -106,7 +106,7 @@ function runTransformSpec(dir) {
         it(`should transform with: "${path.basename(filename)}"`, () => {
           const content = fs.readFileSync(filename, "utf-8");
           const result = babel.transformFileSync(filename, {
-            plugins: [[plugin, transformConfig]],
+            plugins: [[plugin, { modules: transformConfig }]],
           });
 
           expect(makeRaw(content, result.code)).toMatchSnapshot();

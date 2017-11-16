@@ -31,7 +31,10 @@ function getSpecName(spec) {
 module.exports = babel => ({
   visitor: {
     Program(path, state) {
-      configs = fulfillConfigs(state.opts, dirname(state.file.opts.filename));
+      configs = fulfillConfigs(
+        state.opts.modules,
+        dirname(state.file.opts.filename)
+      );
     },
     ImportDeclaration(declaration) {
       const { types } = babel;
