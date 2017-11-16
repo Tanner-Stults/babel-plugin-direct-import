@@ -87,7 +87,7 @@ function runTransformSpec(dir) {
           console.warn = jest.fn();
 
           const content = fs.readFileSync(filename, "utf-8");
-          const result = babel.transform(content, {
+          const result = babel.transformFileSync(filename, {
             plugins: [[plugin, transformConfig]],
           });
 
@@ -105,8 +105,7 @@ function runTransformSpec(dir) {
       transformFixtures.forEach(filename => {
         it(`should transform with: "${path.basename(filename)}"`, () => {
           const content = fs.readFileSync(filename, "utf-8");
-
-          const result = babel.transform(content, {
+          const result = babel.transformFileSync(filename, {
             plugins: [[plugin, transformConfig]],
           });
 
