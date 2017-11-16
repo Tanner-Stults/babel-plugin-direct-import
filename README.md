@@ -7,6 +7,15 @@
 
 Babel plugin to cherry pick imports of es6 modules.
 
+## UNSTABLE CODE WARNING
+
+This (master) branch contains beta version of plugin that was updated because of
+breaking changes in Babel 7.
+
+If you want to use stable version for Babel 6 please check
+[stable](https://github.com/umidbekkarimov/babel-plugin-direct-import/tree/stable)
+branch.
+
 ## Heads Up
 
 Webpack 4 comes with `sideEffects` flag
@@ -36,7 +45,7 @@ es6 package.
 ## Installation
 
 ```bash
-npm install --save-dev babel-plugin-direct-import
+npm install --save-dev babel-plugin-direct-import@next
 ```
 
 ## Example
