@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const util = require("util");
-const babel = require("babel-core");
+const babel = require("@babel/core");
 const plugin = require("../src/index");
 const { fulfillConfigExports } = require("../src/mapper");
 
