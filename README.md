@@ -13,7 +13,7 @@ This (next) branch contains beta version of plugin that was updated because of
 breaking changes in Babel 7.
 
 If you want to use stable version for Babel 6 please check
-[stable](https://github.com/umidbekkarimov/babel-plugin-direct-import/tree/stable)
+[master](https://github.com/umidbekkarimov/babel-plugin-direct-import/tree/master)
 branch.
 
 ## Heads Up
