@@ -1,6 +1,6 @@
 # babel-plugin-direct-import
 
-[![build status](https://img.shields.io/travis/umidbekkarimov/babel-plugin-direct-import/master.svg?style=flat-square)](https://travis-ci.org/umidbekkarimov/babel-plugin-direct-import)
+[![build status](https://img.shields.io/travis/umidbekkarimov/babel-plugin-direct-import/next.svg?style=flat-square)](https://travis-ci.org/umidbekkarimov/babel-plugin-direct-import)
 [![npm version](https://img.shields.io/npm/v/babel-plugin-direct-import.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-direct-import)
 [![npm downloads](https://img.shields.io/npm/dm/babel-plugin-direct-import.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-direct-import)
 [![Codecov](https://img.shields.io/codecov/c/gh/umidbekkarimov/babel-plugin-direct-import.svg?style=flat-square)](https://codecov.io/gh/umidbekkarimov/babel-plugin-direct-import)
@@ -9,7 +9,7 @@ Babel plugin to cherry pick imports of es6 modules.
 
 ## UNSTABLE CODE WARNING
 
-This (master) branch contains beta version of plugin that was updated because of
+This (next) branch contains beta version of plugin that was updated because of
 breaking changes in Babel 7.
 
 If you want to use stable version for Babel 6 please check
