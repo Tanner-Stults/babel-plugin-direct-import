@@ -71,6 +71,12 @@ function runMappingSpec(dir) {
   });
 }
 
+function transform(filename, transformConfig) {
+  return babel.transformFileSync(filename, {
+    plugins: ["syntax-flow", [plugin, { modules: transformConfig }]],
+  });
+}
+
 function runTransformSpec(dir) {
   runSpec(dir, {
     title: "Transform: %s",
@@ -87,9 +93,7 @@ function runTransformSpec(dir) {
           console.warn = jest.fn();
 
           const content = fs.readFileSync(filename, "utf-8");
-          const result = babel.transformFileSync(filename, {
-            plugins: [[plugin, { modules: transformConfig }]],
-          });
+          const result = transform(filename, transformConfig);
 
           expect(result.code.trim()).toBe(content.trim());
           expect(console.warn).toBeCalled();
@@ -105,9 +109,7 @@ function runTransformSpec(dir) {
       transformFixtures.forEach(filename => {
         it(`should transform with: "${path.basename(filename)}"`, () => {
           const content = fs.readFileSync(filename, "utf-8");
-          const result = babel.transformFileSync(filename, {
-            plugins: [[plugin, { modules: transformConfig }]],
-          });
+          const result = transform(filename, transformConfig);
 
           expect(makeRaw(content, result.code)).toMatchSnapshot();
         });

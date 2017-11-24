@@ -37,8 +37,11 @@ module.exports = babel => ({
       );
     },
     ImportDeclaration(declaration) {
-      const { types } = babel;
-      const { specifiers } = declaration.node;
+      const { specifiers, importKind } = declaration.node;
+
+      if (importKind === "type") {
+        return;
+      }
 
       if (specifiers.length === 0) {
         return;
@@ -96,6 +99,8 @@ module.exports = babel => ({
 
         return;
       }
+
+      const { types } = babel;
 
       specifiers.forEach(spec => {
         const name = getSpecName(spec);
